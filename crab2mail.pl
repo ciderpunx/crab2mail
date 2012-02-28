@@ -32,9 +32,13 @@ my $msg_body = '';
 open my $out, '>>:utf8', $SEEN;
 for(@entries) {
 	next if ($seen{$_->id});
-	my $msg = '';
-	$msg_body .= format_msg($_->summary->body) if ($_->summary && $_->summary->body);
-	# $msg_body .= format_msg($_->content->body) if ($_->content && $_->content->body);
+	my $summary = format_msg($_->summary->body) if ($_->summary && $_->summary->body);
+	if ($summary) {
+		$msg_body .= $summary;
+	}
+	else {
+		$msg_body .= format_msg($_->content->body) if ($_->content && $_->content->body);
+	}
 	$msg_body .= "\nRead more at: " 
 			. $_->link if ($_->link);
 	$msg_body .= "\n=====\n\n";
