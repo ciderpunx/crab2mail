@@ -1,0 +1,11 @@
+{
+		"host"		: "we.riseup.net",
+		"username"  : "USER",  
+		"password"  : "PASSWORD",     
+		"max_items"	: 5,
+		"_mailhost" : "remove the leading _ and fill in if you can't do local sendmail",
+		"_mailuser" : "remove the leading _ and fill in if you can't do local sendmail",
+		"_mailpass" : "remove the leading _ and fill in if you can't do local sendmail",
+		"sender"	: 'noreply@example.com',
+		"recipient"	: 'you@example.com'
+}
