@@ -48,7 +48,7 @@ for(@entries) {
 }
 close $out;
 
-send_mail($config, $msg_body);
+send_mail($config, $msg_body) if($new_items);
 
 sub get_config {
 	open my $in, '<:utf8', $CONFIGPATH;
